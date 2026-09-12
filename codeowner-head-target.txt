@@ -1,1 +1,1 @@
-trusted base content protected by base CODEOWNERS
+attacker changes content while PR head removes CODEOWNERS ownership
