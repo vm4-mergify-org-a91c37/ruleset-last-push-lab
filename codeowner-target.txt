@@ -1,1 +1,1 @@
-trusted baseline code-owner protected content
+secondary modifies CODEOWNERS-protected content without owner approval
