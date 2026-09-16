@@ -1,7 +1,11 @@
-pull_request_rules:
-  - name: required-team-merge-probe
-    conditions:
-      - label = vm4-required-team-go
-    actions:
-      merge:
-        method: squash
+merge_queue:
+  mode: serial
+
+queue_rules:
+  - name: VM4 final-window base advance
+    batch_size: 1
+    merge_method: fast-forward
+    queue_conditions:
+      - base = vm4-final-base-race-20260917
+    merge_conditions:
+      - check-success = vm4-final-base-race
