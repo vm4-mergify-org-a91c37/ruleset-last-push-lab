@@ -1,0 +1,19 @@
+name: VM4 Final Base Race
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    name: vm4-final-base-race
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delay then pass
+        run: |
+          sleep 20
+          echo VM4_FINAL_BASE_RACE_PASS
+
