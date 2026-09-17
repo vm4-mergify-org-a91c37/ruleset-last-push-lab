@@ -1,7 +1,8 @@
-pull_request_rules:
-  - name: required-team-merge-probe
-    conditions:
-      - label = vm4-required-team-go
-    actions:
-      merge:
-        method: squash
+merge_queue:
+  mode: serial
+queue_rules:
+  - name: VM4 classic required deployment MQ discriminator
+    queue_conditions:
+      - base = vm4-classic-deploy-mq-base-20260917
+      - title = VM4_CLASSIC_DEPLOY_MQ_20260917
+    merge_conditions: []
