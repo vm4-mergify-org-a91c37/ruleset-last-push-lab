@@ -1,0 +1,19 @@
+name: VM4 Batch Peek Capture
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    name: vm4-batch-peek-guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Keep synthetic batch observable
+        run: |
+          sleep 60
+          echo VM4_BATCH_PEEK_PASS
+
