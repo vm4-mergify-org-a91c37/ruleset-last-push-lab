@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: required-team-merge-probe
+  - name: VM4 unresolved Depends-On must block WA merge
     conditions:
-      - label = vm4-required-team-go
+      - title = VM4_DEPENDS_ON_UNRESOLVABLE_20260917
     actions:
       merge:
-        method: squash
+        method: merge
