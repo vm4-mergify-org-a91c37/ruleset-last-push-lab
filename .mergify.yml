@@ -1,9 +1,10 @@
 merge_queue:
   mode: serial
 queue_rules:
-  - name: VM4 late Depends-On discriminator
+  - name: VM4 late Depends-On controlled discriminator
     batch_size: 1
     queue_conditions:
       - base = vm4-dep-late-base-20260917
-      - title = VM4_DEP_LATE_TARGET_20260917
-    merge_conditions: []
+      - title = VM4_DEP_LATE_TARGET2_20260917
+    merge_conditions:
+      - check-success = vm4-late-dep-gate
