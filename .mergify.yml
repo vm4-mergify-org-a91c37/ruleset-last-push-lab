@@ -1,7 +1,10 @@
+merge_protections_settings:
+  reporting_method: deployments
+
 pull_request_rules:
-  - name: required-team-merge-probe
+  - name: VM4 WA merge must honor deployment-reporting Merge Protections
     conditions:
-      - label = vm4-required-team-go
+      - title = VM4_WA_MP_DEPLOYMENT_ENFORCEMENT_20260917
     actions:
       merge:
-        method: squash
+        method: merge
