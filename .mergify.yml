@@ -5,3 +5,13 @@ pull_request_rules:
     actions:
       merge:
         method: squash
+merge_queue:
+  mode: serial
+queue_rules:
+  - name: VM4 classic push restriction fast-forward discriminator
+    batch_size: 1
+    merge_method: fast-forward
+    queue_conditions:
+      - base = vm4-restrict-ff-base-20260917
+      - title = VM4_RESTRICT_FF_20260917
+    merge_conditions: []
