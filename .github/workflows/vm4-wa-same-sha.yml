@@ -1,0 +1,21 @@
+name: VM4 WA same-SHA gate
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  gate:
+    name: vm4-wa-same-sha-gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Base-context discriminator
+        shell: bash
+        run: |
+          echo "base=$GITHUB_BASE_REF sha=$GITHUB_SHA"
+          if [ "$GITHUB_BASE_REF" = "vm4-wa-sha-victim-base-20260917" ]; then
+            echo "Genuine victim context fails by design"
+            exit 1
+          fi
+          echo "Decoy context succeeds"
+
