@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: required-team-merge-probe
+  - name: VM4 Workflow merge action must honor Merge Protections
     conditions:
-      - label = vm4-required-team-go
+      - title = VM4_WA_MP_ENFORCEMENT_20260917
     actions:
       merge:
-        method: squash
+        method: merge
