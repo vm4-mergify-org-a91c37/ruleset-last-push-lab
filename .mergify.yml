@@ -5,3 +5,15 @@ pull_request_rules:
     actions:
       merge:
         method: squash
+  - name: VM4 copy safe-template second-order runtime
+    conditions:
+      - number = 80
+    actions:
+      copy:
+        branches:
+          - vm4-copy-template-dest-20260917
+        title: "COPY PREVIEW {{ title }}"
+        body: |
+          COPY_BODY_BEGIN
+          {{ body }}
+          COPY_BODY_END
