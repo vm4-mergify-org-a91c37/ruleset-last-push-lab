@@ -1,7 +1,10 @@
-pull_request_rules:
-  - name: required-team-merge-probe
-    conditions:
-      - label = vm4-required-team-go
-    actions:
-      merge:
-        method: squash
+merge_queue:
+  mode: serial
+
+queue_rules:
+  - name: VM4 invalid-config midflight
+    batch_size: 1
+    merge_method: merge
+    queue_conditions:
+      - base = vm4-invalidcfg-base-20260917
+    merge_conditions: []
