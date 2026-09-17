@@ -1,7 +1,0 @@
-pull_request_rules:
-  - name: required-team-merge-probe
-    conditions:
-      - label = vm4-required-team-go
-    actions:
-      merge:
-        method: squash
