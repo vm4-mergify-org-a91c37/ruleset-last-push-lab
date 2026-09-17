@@ -1,2 +1,0 @@
-C1 approved snapshot
-C2 latest push without reapproval
