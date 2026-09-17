@@ -1,7 +1,9 @@
 pull_request_rules:
-  - name: required-team-merge-probe
+  - name: VM4 edit bot permission revocation probe
     conditions:
-      - label = vm4-required-team-go
+      - title = VM4_EDITBOT_READY_20260917
+      - draft
     actions:
-      merge:
-        method: squash
+      edit:
+        draft: false
+        bot_account: livastic-vm4-secondary-20260911
